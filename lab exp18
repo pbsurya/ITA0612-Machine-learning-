@@ -1,1 +1,8 @@
+age = int(input("Enter Age: "))
+weight = float(input("Enter Weight (kg): "))
+hemoglobin = float(input("Enter Hemoglobin Level: "))
 
+if age >= 18 and age <= 60 and weight >= 50 and hemoglobin >= 12.5:
+    print("Eligible for Blood Donation")
+else:
+    print("Not Eligible for Blood Donation")
