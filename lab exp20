@@ -1,1 +1,23 @@
+seats = int(input("Enter Number of Seats: "))
+category = input("Enter Seat Category (Silver/Gold): ")
 
+if category.lower() == "silver":
+    price = 150
+elif category.lower() == "gold":
+    price = 250
+else:
+    print("Invalid Seat Category")
+    exit()
+
+total = seats * price
+
+if total >= 1000:
+    discount = total * 0.10
+else:
+    discount = 0
+
+final_amount = total - discount
+
+print("Total Amount = Rs.", total)
+print("Discount = Rs.", discount)
+print("Final Amount = Rs.", final_amount)
