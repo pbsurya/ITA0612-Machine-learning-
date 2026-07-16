@@ -1,1 +1,11 @@
+total_classes = int(input("Enter Total Classes: "))
+attended = int(input("Enter Classes Attended: "))
 
+percentage = (attended / total_classes) * 100
+
+print("Attendance Percentage =", round(percentage, 2), "%")
+
+if percentage >= 75:
+    print("Eligible for Examination")
+else:
+    print("Not Eligible for Examination")
