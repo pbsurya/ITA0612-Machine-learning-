@@ -1,1 +1,15 @@
+amount = float(input("Enter Recharge Amount: "))
 
+if amount >= 500:
+    cashback = amount * 0.10
+
+elif amount >= 300:
+    cashback = amount * 0.05
+
+else:
+    cashback = 0
+
+final_amount = amount - cashback
+
+print("Cashback = Rs.", cashback)
+print("Final Amount to Pay = Rs.", final_amount)
