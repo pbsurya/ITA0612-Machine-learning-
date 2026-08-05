@@ -1,0 +1,31 @@
+import pandas as pd
+
+data = pd.read_csv("data.csv")
+
+concepts = data.iloc[:, :-1].values
+target = data.iloc[:, -1].values
+
+specific = concepts[0].copy()
+general = [["?" for i in range(len(specific))] for j in range(len(specific))]
+
+for i, h in enumerate(concepts):
+
+    if target[i] == "Yes":
+        for x in range(len(specific)):
+            if h[x] != specific[x]:
+                specific[x] = "?"
+                general[x][x] = "?"
+
+    if target[i] == "No":
+        for x in range(len(specific)):
+            if h[x] != specific[x]:
+                general[x][x] = specific[x]
+            else:
+                general[x][x] = "?"
+
+print("Final Specific Hypothesis:")
+print(specific)
+
+print("\nFinal General Hypothesis:")
+for g in general:
+    print(g)
